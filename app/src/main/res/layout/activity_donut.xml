@@ -79,6 +79,7 @@
         android:layout_marginStart="56dp"
         android:layout_marginLeft="56dp"
         android:layout_marginTop="56dp"
+        android:onClick="addToList"
         android:text="@string/add"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/quantityPicker" />
@@ -88,6 +89,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="56dp"
+        android:onClick="showList"
         android:text="@string/view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.536"
@@ -98,12 +100,13 @@
         android:id="@+id/orderButton"
         android:layout_width="137dp"
         android:layout_height="48dp"
+        android:onClick="showDialog"
         android:text="@string/order"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2"
+        app:layout_constraintTop_toBottomOf="@+id/totalEditBox"
         app:layout_constraintVertical_bias="0.56" />
 
     <TextView
@@ -120,13 +123,15 @@
         app:layout_constraintTop_toBottomOf="@+id/addButton" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/totalEditBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="76dp"
-        android:ems="10"
-        android:inputType="textPersonName"
         android:editable="false"
+        android:ems="10"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.246"
         app:layout_constraintStart_toEndOf="@+id/textView9"

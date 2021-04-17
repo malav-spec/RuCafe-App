@@ -15,9 +15,7 @@ public class Donuts extends MenuItem implements Customizable{
      */
     private int quantity = 0;
     /**
-     * Used to represent flavor of donut
-     */
-    private String flavor= "";
+
     /**
      * Used to represent order as list of donut
      */
@@ -27,13 +25,11 @@ public class Donuts extends MenuItem implements Customizable{
      *  Constructor for Donut class
      * @param price Price of donut
      * @param type Kind of donut
-     * @param flavor of donut
      * @param quantity Number of donuts
      */
-    public Donuts(Double price, String type, String flavor, int quantity){
+    public Donuts(Double price, String type, int quantity){
         super(price);
         this.type = type;
-        this.flavor = flavor;
         this.quantity = quantity;
     }
 
@@ -76,22 +72,8 @@ public class Donuts extends MenuItem implements Customizable{
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
-    @Override
-    /**
-     * Used to get flavor of donut
-     * @return Donut flavor
-     */
-    public String getFlavor() {
-        return flavor;
-    }
 
-    /**
-     * Used to set flavor of donut
-     * @param flavor Donut flavor
-     */
-    public void setFlavor(String flavor) {
-        this.flavor = flavor;
-    }
+
 
     /**
      * Used to roundoff item price
@@ -110,14 +92,14 @@ public class Donuts extends MenuItem implements Customizable{
 
         double price_type = 0;
 
-        if(this.type.equals("Yeast Donut") || this.type.equals("YeastDonut")){
+        if(this.type.equals("Chocolate Glazed") || this.type.equals("Strawberry Glazed")){
             price_type = 1.39;
         }
-        else if(this.type.equals("Cake Donut") || this.type.equals("CakeDonut")){
+        else if(this.type.equals("Cinammon") || this.type.equals("Regular Baked")){
             price_type = 1.59;
         }
-        else if(this.type.equals("Donut Holes") || this.type.equals("DonutHoles")){
-            price_type = 0.33;
+        else if(this.type.equals("Jelly Filled") || this.type.equals("Boston Kreme")){
+            price_type = 2.00;
         }
 
         super.setPrice(roundOff(price_type * this.quantity));
@@ -131,7 +113,11 @@ public class Donuts extends MenuItem implements Customizable{
      */
     @Override
     public String getDetails(){
-        return type + ", " + flavor + ", " + quantity  + ", " + itemPrice();
+        return type + ", "  + quantity  + ", " + itemPrice();
+    }
+
+    public String getFullDonutOrder(){
+        return type + ", Quant: " + quantity + ", Price: $" + itemPrice();
     }
 
     /**
@@ -140,7 +126,7 @@ public class Donuts extends MenuItem implements Customizable{
      */
     @Override
     public String toString(){
-        return "$"+itemPrice();
+        return "$" + itemPrice();
     }
 
     /**

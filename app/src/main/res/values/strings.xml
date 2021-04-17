@@ -34,6 +34,7 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="addOrder">Add To Order</string>
     <string name="dialogMesg">Confirm order and move to Donuts?</string>
+    <string name="dialogMesgDonut">Confirm donut order?</string>
     <string name="dialogTitle">Confirmation</string>
     <string name="positive">Yes</string>
     <string name="negative">No</string>

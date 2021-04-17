@@ -8,7 +8,7 @@
     tools:context=".CoffeeActivity">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/listTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
@@ -32,7 +32,7 @@
         android:textColor="#FFFFFF"
         android:textSize="@dimen/size_twenty"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/listTextView" />
 
     <Spinner
         android:id="@+id/SizeSpinner"
@@ -45,7 +45,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/textView2"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/listTextView" />
 
     <TextView
         android:id="@+id/textView3"
@@ -154,15 +154,15 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="12dp"
         android:layout_marginRight="12dp"
-        android:layout_marginBottom="128dp"
-        android:text="@string/subTotal"
+        android:layout_marginBottom="200dp"
         android:editable="false"
+        android:text="@string/subTotal"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/totalEditText"
-        app:layout_constraintHorizontal_bias="0.868"
+        app:layout_constraintHorizontal_bias="0.769"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button

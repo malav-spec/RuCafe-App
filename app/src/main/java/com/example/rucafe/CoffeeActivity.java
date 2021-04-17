@@ -69,7 +69,7 @@ public class CoffeeActivity extends AppCompatActivity implements AdapterView.OnI
     }
 
     public void openNewActivity(){
-        Intent intent = new Intent(this, DonutActivity.class);
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 
