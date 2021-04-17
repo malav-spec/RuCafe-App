@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="size_array">
+        <item>Short</item>
+        <item>Tall</item>
+        <item>Grande</item>
+        <item>Venti</item>
+    </string-array>
+
+    <string-array name="type_array">
+        <item>Boston Kreme</item>
+        <item>Chocolate Glazed</item>
+        <item>Cinammon</item>
+        <item>Jelly Filled</item>
+        <item>Jelly Filled</item>
+        <item>Strawberry Glazed</item>
+        <item>Regular Baked</item>
+    </string-array>
+</resources>
