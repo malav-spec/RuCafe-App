@@ -9,7 +9,9 @@
     android:noHistory="true"
     tools:context=".MainActivity"
     android:orientation="vertical"
+    android:gravity="center"
     android:background="@color/scarlet">
+
 
 
     <TextView
