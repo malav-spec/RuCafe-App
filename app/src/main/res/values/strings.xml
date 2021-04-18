@@ -21,7 +21,6 @@
     <string name="quantity">Select Quantity:</string>
     <string name="add">Add to List</string>
     <string name="view">View List</string>
-    <string name="order">Order</string>
     <string name="subtotal">SubTotal:</string>
     <string name="title_activity_current_order">CurrentOrder</string>
     <!-- Strings used for fragments for navigation -->
@@ -38,5 +37,11 @@
     <string name="dialogTitle">Confirmation</string>
     <string name="positive">Yes</string>
     <string name="negative">No</string>
+    <string name="tap_on_order_to_cancel_it" />
+    <string name="remove" />
+    <string name="tap_on_order_to_remove_it" />
+    <string name="remove1">Remove</string>
+    <string name="tap_on_the_order_to_cancel">Tap on the Order to cancel</string>
+    <string name="order">Order</string>
 
 </resources>
