@@ -14,6 +14,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
+
 import Model.Donuts;
 import Model.Order;
 import Model.StoreOrder;
@@ -34,9 +36,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_current_order);
-        Donuts dnt = new Donuts(22.0,"Chocolate Glazed",2);
-        currentOrder.add(dnt);
+        setContentView(R.layout.activity_main);
+
     }
     public void sendMessage(View view) {
         Intent intent = new Intent(this, CurrentOrderActivity.class);
@@ -53,6 +54,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void toDonut(View view){
         Intent intent = new Intent(this, DonutActivity.class);
+        startActivity(intent);
+    }
+
+    public void toCurrentOrder(View view){
+        Intent intent = new Intent(this, CurrentOrderActivity.class);
         startActivity(intent);
     }
 }

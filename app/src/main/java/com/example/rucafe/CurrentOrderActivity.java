@@ -3,6 +3,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -19,10 +20,9 @@ public class CurrentOrderActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_current_order);
         list = findViewById(R.id.list);
-
-        ArrayList<String> tutorials = currentOrder.makeAL();
-        tutorials.add("h");
-        ArrayAdapter<String> List = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, tutorials);
+        System.out.println(currentOrder.getOrderNumber());
+        Toast.makeText(getApplicationContext(),""+currentOrder.getTotal(),Toast.LENGTH_SHORT).show();
+        ArrayAdapter<String> List = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, currentOrder.makeAL());
         list.setAdapter(List);
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -34,12 +34,7 @@ public class CurrentOrderActivity extends AppCompatActivity {
     }
 
     private void remove(int pos){
-        setContentView(R.layout.activity_current_order);
-        list = findViewById(R.id.list);
-        ArrayList<String> tutorials = currentOrder.makeAL();
-        tutorials.add("hp");
-        ArrayAdapter<String> List = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, tutorials);
-        list.setAdapter(List);
+        currentOrder.remove(""+pos);
         Intent intent = new Intent(this, CurrentOrderActivity.class);
         Button editText = (Button) findViewById(R.id.butt);
         String message = editText.getText().toString();
