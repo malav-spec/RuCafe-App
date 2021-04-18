@@ -101,6 +101,10 @@ public class Order implements Customizable {
         return true;
     }
 
+    public int getOrderNumber(){
+        return orderNumber;
+    }
+
     /**
      *Used to Array List of String for Order values
      * @return ArrayList of String
