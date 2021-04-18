@@ -1,7 +1,5 @@
 package com.example.rucafe;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
-
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -14,10 +12,8 @@ import android.widget.EditText;
 import android.widget.NumberPicker;
 import android.widget.Spinner;
 import android.widget.Toast;
-
 import java.util.ArrayList;
 import java.util.StringTokenizer;
-
 import Model.Donuts;
 
 import static com.example.rucafe.MainActivity.currentOrder;
@@ -28,9 +24,9 @@ public class DonutActivity extends AppCompatActivity implements AdapterView.OnIt
     private String[] pickerVals;
     private Spinner donutSpinner;
     private EditText total;
-    private final ArrayList<String> orders = new ArrayList();
-    private final ArrayList<String> orderDetails = new ArrayList();
-    private final ArrayList<Double> orderPrices = new ArrayList<>();
+    private ArrayList<String> orders = new ArrayList();
+    private ArrayList<String> orderDetails = new ArrayList();
+    private ArrayList<Double> orderPrices = new ArrayList<>();
     private String[] donutOrders;
     private AlertDialog alertDialog;
     Donuts donutOrder = new Donuts();
@@ -92,6 +88,11 @@ public class DonutActivity extends AppCompatActivity implements AdapterView.OnIt
         });
 
         alertDialog = builder.create();
+
+        if(savedInstanceState != null){
+            donutOrders = savedInstanceState.getStringArray("DONUT_ORDERS");
+            orderDetails = savedInstanceState.getStringArrayList("ORDER_DETAILS");
+        }
 
     }
 
@@ -176,4 +177,46 @@ public class DonutActivity extends AppCompatActivity implements AdapterView.OnIt
     public void onNothingSelected(AdapterView<?> parent) {
 
     }
+
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        super.onSaveInstanceState(savedInstanceState);
+        // Save UI state changes to the savedInstanceState.
+        // This bundle will be passed to onCreate if the process is
+        // killed and restarted.
+        savedInstanceState.putBoolean("MyBoolean", true);
+        savedInstanceState.putDouble("myDouble", 1.9);
+        savedInstanceState.putInt("MyInt", 1);
+        savedInstanceState.putString("MyString", "Welcome back to Android");
+        savedInstanceState.putStringArray("DONUT_ORDERS", donutOrders);
+        savedInstanceState.putStringArrayList("ORDER_DETAILS", orderDetails);
+        // etc.
+    }
+
+    @Override
+    public void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        // Restore UI state from the savedInstanceState.
+        // This bundle has also been passed to onCreate.
+        boolean myBoolean = savedInstanceState.getBoolean("MyBoolean");
+        double myDouble = savedInstanceState.getDouble("myDouble");
+        int myInt = savedInstanceState.getInt("MyInt");
+        String myString = savedInstanceState.getString("MyString");
+        donutOrders = savedInstanceState.getStringArray("DONUT_ORDERS");
+        orderDetails = savedInstanceState.getStringArrayList("ORDER_DETAILS");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.d("PAUSE", donutOrders[0]);
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d("RESUME", "resume activity");
+    }
+
 }

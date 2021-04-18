@@ -21,6 +21,10 @@ public class Donuts extends MenuItem implements Customizable{
      */
     private ArrayList<Donuts> donutList = new ArrayList<>();
 
+//    private ArrayList<String> orders = new ArrayList<>();
+//
+//    private String[] donutOrder;
+
     /**
      *  Constructor for Donut class
      * @param price Price of donut

@@ -13,10 +13,6 @@ public class DonutListActivity extends AppCompatActivity {
     private ListView donutList;
     private String[] donutOrders;
 
-
-    String[] mobileArray = {"Android","IPhone","WindowsMobile","Blackberry",
-            "WebOS","Ubuntu","Windows7","Max OS X"};
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
