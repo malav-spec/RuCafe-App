@@ -28,11 +28,53 @@
 
     </TextView>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/scarlet"
+        android:gravity="center_horizontal"
+        android:text="@string/total"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp">
+
+    </TextView>
+
+    <EditText
+        android:id="@+id/current_total"
+        android:layout_width="98dp"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF">
+
+
+    </EditText>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/scarlet"
+        android:gravity="center_horizontal"
+        android:text="@string/final_amount"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp">
+
+    </TextView>
+
+    <EditText
+        android:id="@+id/current_total_tax"
+        android:layout_width="98dp"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF">
+
+    </EditText>
+
     <Button
         android:id="@+id/butt"
         android:layout_width="wrap_content"
         android:layout_height="43dp"
         android:text="@string/order"
+        android:onClick="addToAllOrders"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.535"

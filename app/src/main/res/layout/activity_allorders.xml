@@ -2,51 +2,11 @@
 
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:noHistory="true"
-    tools:context=".MainActivity"
+    tools:context=".AllOrderActivity"
     android:orientation="vertical"
-    android:gravity="center"
-    android:background="@color/scarlet">
-
-
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/scarlet"
-        android:gravity="center_horizontal"
-        android:text="@string/tap_on_order_to_cancel_it"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="#FFFFFF"
-        android:textSize="24sp">
-
-    </TextView>
-
-    <ListView
-        android:id="@+id/list2"
-        android:layout_width="match_parent"
-        android:layout_height="646dp"
-        android:background="@color/scarlet"
-        android:textColor="#FFFFFF"
-        android:textSize="24sp"
-        android:textStyle="bold" />
-
-    <Button
-        android:id="@+id/butt"
-        android:layout_width="wrap_content"
-        android:layout_height="43dp"
-        android:onClick="sendMessage"
-        android:text="@string/remove"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.535"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/wcCheckBox"
-        app:layout_constraintVertical_bias="0.745" />
-
+    android:background="@color/purple_200">
 
 </LinearLayout>
