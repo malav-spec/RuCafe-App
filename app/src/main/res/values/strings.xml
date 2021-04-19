@@ -46,5 +46,6 @@
     <string name="total">Total</string>
     <string name="total_with_text">Total With Text</string>
     <string name="final_amount">Final Amount</string>
+    <string name="main_menu">Main Menu</string>
 
 </resources>
