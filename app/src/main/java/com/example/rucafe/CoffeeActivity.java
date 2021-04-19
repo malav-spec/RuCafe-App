@@ -65,7 +65,6 @@ public class CoffeeActivity extends AppCompatActivity implements AdapterView.OnI
             public void onClick(DialogInterface dialog, int id) {
             }
         });
-
          alertDialog = builder.create();
     }
     private double roundOff(double number){ //rounds off a number to two decimal places
