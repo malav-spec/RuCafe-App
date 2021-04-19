@@ -28,6 +28,7 @@ public class DonutActivity extends AppCompatActivity implements AdapterView.OnIt
     private ArrayList<String> orderDetails = new ArrayList();
     private ArrayList<Double> orderPrices = new ArrayList<>();
     private String[] donutOrders;
+    private double price;
     private AlertDialog alertDialog;
     Donuts donutOrder = new Donuts();
 
@@ -74,10 +75,12 @@ public class DonutActivity extends AppCompatActivity implements AdapterView.OnIt
 
                     StringTokenizer st = new StringTokenizer(orders.get(i).replaceAll("\\s", ""), ",");
                     Donuts donut = getDonutOrder(st);
+                    donut.itemPrice();
                     currentOrder.add(donut);
+                    Toast.makeText(getApplicationContext(),""+donut.getFullDonutOrder(),Toast.LENGTH_SHORT).show();
                 }
                 String stringTotal = getSubTotal();
-                currentOrder.setTotal(currentOrder.getTotal()+Double.parseDouble(stringTotal.substring(1)));
+                //currentOrder.setTotal(currentOrder.getTotal()+Double.parseDouble(stringTotal.substring(1)));
                 Toast.makeText(getApplicationContext(),"Order added",Toast.LENGTH_SHORT).show();
                 openNewActivity();
             }
@@ -165,6 +168,9 @@ public class DonutActivity extends AppCompatActivity implements AdapterView.OnIt
     public void addToList(View view){
         orders.add(donutOrder.getDetails());
         orderDetails.add(donutOrder.getFullDonutOrder());
+        double db= donutOrder.itemPrice()+currentOrder.getTotal();
+        //Toast.makeText(getApplicationContext(),amount,Toast.LENGTH_SHORT).show();
+        currentOrder.setTotal(db);
         Toast.makeText(getApplicationContext(),"Donut added to list",Toast.LENGTH_SHORT).show();
         showDialog(view);
     }
