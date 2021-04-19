@@ -56,6 +56,7 @@ public class CoffeeActivity extends AppCompatActivity implements AdapterView.OnI
             public void onClick(DialogInterface dialog, int id) {
                 currentOrder.add(coffeeOrder);
                 currentOrder.setTotal(Double.parseDouble(coffeeOrder.toString().substring(1))+ currentOrder.getTotal());
+                currentOrder.setTotal(roundOff(currentOrder.getTotal()));
                 Toast.makeText(getApplicationContext(),"Order added",Toast.LENGTH_SHORT).show();
                 openNewActivity();
             }
@@ -66,6 +67,9 @@ public class CoffeeActivity extends AppCompatActivity implements AdapterView.OnI
         });
 
          alertDialog = builder.create();
+    }
+    private double roundOff(double number){ //rounds off a number to two decimal places
+        return Math.round(number * 100.0) / 100.0;
     }
 
     public void openNewActivity(){

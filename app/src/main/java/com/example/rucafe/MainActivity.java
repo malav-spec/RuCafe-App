@@ -39,13 +39,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
     }
-    public void sendMessage(View view) {
-        Intent intent = new Intent(this, CurrentOrderActivity.class);
-        Button editText = (Button) findViewById(R.id.butt);
-        String message = editText.getText().toString();
-        intent.putExtra(EXTRA_MESSAGE, message);
-        startActivity(intent);
-    }
+
 
     public void toCoffee(View view){
         Intent intent = new Intent(this, CoffeeActivity.class);
@@ -59,6 +53,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void toCurrentOrder(View view){
         Intent intent = new Intent(this, CurrentOrderActivity.class);
+        startActivity(intent);
+    }
+
+    public void toPrev(View view){
+        Intent intent = new Intent(this, All.class);
         startActivity(intent);
     }
 }

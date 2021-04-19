@@ -64,7 +64,7 @@ public class DonutActivity extends AppCompatActivity implements AdapterView.OnIt
 
         builder.setPositiveButton(R.string.positive, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
-                if(orders.size() == 0){
+                if(orders.size() == -1){
                     Toast.makeText(getApplicationContext(),"No donuts to order",Toast.LENGTH_SHORT).show();
                     openNewActivity();
                 }
@@ -166,6 +166,7 @@ public class DonutActivity extends AppCompatActivity implements AdapterView.OnIt
         orders.add(donutOrder.getDetails());
         orderDetails.add(donutOrder.getFullDonutOrder());
         Toast.makeText(getApplicationContext(),"Donut added to list",Toast.LENGTH_SHORT).show();
+        showDialog(view);
     }
 
     @Override
@@ -177,7 +178,7 @@ public class DonutActivity extends AppCompatActivity implements AdapterView.OnIt
     public void onNothingSelected(AdapterView<?> parent) {
 
     }
-
+/*
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
         super.onSaveInstanceState(savedInstanceState);
@@ -218,5 +219,5 @@ public class DonutActivity extends AppCompatActivity implements AdapterView.OnIt
         super.onResume();
         Log.d("RESUME", "resume activity");
     }
-
+*/
 }
