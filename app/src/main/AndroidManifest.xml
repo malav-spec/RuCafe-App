@@ -9,8 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.RuCafe">
-        <activity android:name=".listActivity" android:theme="@style/ListFont"></activity>
-        <activity android:name=".DonutListActivity" >
+        <activity android:name=".AllOrders"></activity>
+        <activity
+            android:name=".listActivity"
+            android:theme="@style/ListFont" />
+        <activity android:name=".DonutListActivity">
             android:parentActivityName=".DonutActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
