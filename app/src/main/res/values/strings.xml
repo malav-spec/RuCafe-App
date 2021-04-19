@@ -43,5 +43,8 @@
     <string name="remove1">Remove</string>
     <string name="tap_on_the_order_to_cancel">Tap on the Order to cancel</string>
     <string name="order">Order</string>
+    <string name="total">Total</string>
+    <string name="total_with_text">Total With Text</string>
+    <string name="final_amount">Final Amount</string>
 
 </resources>
