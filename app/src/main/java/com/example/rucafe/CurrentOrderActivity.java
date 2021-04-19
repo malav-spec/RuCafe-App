@@ -59,12 +59,12 @@ public class CurrentOrderActivity extends AppCompatActivity {
         ArrayList<String> temp = currentOrder.makeAL();
         String str = "";
         for(int i=0;i<temp.size();i++){
-            str=str+temp.get(i)+"\n";
+            str = str + temp.get(i) +"\n";
         }
         if(currentOrder.getTotal()==0.0){
             finish();
         }
-        str=str+"Total Amount = $"+currentOrder.getTotalWithTax()+"\n";
+        str = str + "Total Amount = $" + currentOrder.getTotalWithTax() + "\n";
         allOrder.add(str);
         currentOrder.clearAll();
         finish();
@@ -74,10 +74,10 @@ public class CurrentOrderActivity extends AppCompatActivity {
         StringTokenizer st = new StringTokenizer(str, ",");
         String amountInString="";
         while(st.hasMoreTokens()){
-            amountInString=st.nextToken();
+            amountInString = st.nextToken();
         }
         Double amount = Double.parseDouble(amountInString);
-        currentOrder.setTotal(currentOrder.getTotal()-amount);
+        currentOrder.setTotal(currentOrder.getTotal() - amount);
     }
 
 }

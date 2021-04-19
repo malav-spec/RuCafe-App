@@ -28,19 +28,6 @@
 
     </TextView>
 
-    <Button
-        android:id="@+id/allorderbutton"
-        android:layout_width="wrap_content"
-        android:layout_height="43dp"
-        android:onClick="mainMenu"
-        android:text="@string/main_menu"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.535"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/wcCheckBox"
-        app:layout_constraintVertical_bias="0.745" />
-
     <ListView
         android:id="@+id/list"
         android:layout_width="match_parent"

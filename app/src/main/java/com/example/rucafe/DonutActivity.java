@@ -68,6 +68,7 @@ public class DonutActivity extends AppCompatActivity implements AdapterView.OnIt
                 if(orders.size() == -1){
                     Toast.makeText(getApplicationContext(),"No donuts to order",Toast.LENGTH_SHORT).show();
                     openNewActivity();
+                    finish();
                 }
 
                 for(int i = 0; i < orders.size(); i++){
@@ -83,10 +84,12 @@ public class DonutActivity extends AppCompatActivity implements AdapterView.OnIt
                 //currentOrder.setTotal(currentOrder.getTotal()+Double.parseDouble(stringTotal.substring(1)));
                 Toast.makeText(getApplicationContext(),"Order added",Toast.LENGTH_SHORT).show();
                 openNewActivity();
+                finish();
             }
         });
         builder.setNeutralButton(R.string.negative, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
+                removeFromList();
             }
         });
 
@@ -101,6 +104,7 @@ public class DonutActivity extends AppCompatActivity implements AdapterView.OnIt
 
     public void populateArray(){
         int i;
+        //Log.d("Size of orderDetails", Integer.toString(orderDetails.size()));
         donutOrders = new String[orderDetails.size()];
         for(i = 0; i < donutOrders.length; i++){
             donutOrders[i] = orderDetails.get(i);
@@ -168,11 +172,15 @@ public class DonutActivity extends AppCompatActivity implements AdapterView.OnIt
     public void addToList(View view){
         orders.add(donutOrder.getDetails());
         orderDetails.add(donutOrder.getFullDonutOrder());
-        double db= donutOrder.itemPrice()+currentOrder.getTotal();
+        double db = donutOrder.itemPrice() + currentOrder.getTotal();
         //Toast.makeText(getApplicationContext(),amount,Toast.LENGTH_SHORT).show();
         currentOrder.setTotal(db);
         Toast.makeText(getApplicationContext(),"Donut added to list",Toast.LENGTH_SHORT).show();
         showDialog(view);
+    }
+
+    public void removeFromList(){
+        orders.remove(donutOrder.getDetails());
     }
 
     @Override
@@ -216,7 +224,7 @@ public class DonutActivity extends AppCompatActivity implements AdapterView.OnIt
     @Override
     protected void onPause() {
         super.onPause();
-        Log.d("PAUSE", donutOrders[0]);
+        Log.d("PAUSE", "pause actvity");
 
     }
 

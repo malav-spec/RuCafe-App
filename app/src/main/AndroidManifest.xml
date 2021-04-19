@@ -9,7 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.RuCafe">
-        <activity android:name=".AllOrders"></activity>
+        <activity android:name=".AllOrders">
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
         <activity
             android:name=".listActivity"
             android:theme="@style/ListFont" />
@@ -19,7 +24,12 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".DonutActivity" />
         </activity>
-        <activity android:name=".CurrentOrderActivity" />
+        <activity android:name=".CurrentOrderActivity">
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
         <activity android:name=".DonutActivity">
             android:parentActivityName=".MainActivity">
             <meta-data

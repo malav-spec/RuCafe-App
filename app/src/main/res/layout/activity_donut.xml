@@ -50,7 +50,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="144dp"
         android:text="@string/quantity"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
@@ -62,45 +62,21 @@
         style="@style/AppTheme.Picker"
         android:layout_width="66dp"
         android:layout_height="126dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="88dp"
         android:background="@color/scarlet"
         android:scrollbarThumbHorizontal="@color/purple_200"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintHorizontal_bias="0.243"
         app:layout_constraintStart_toEndOf="@+id/textView7"
         app:layout_constraintTop_toBottomOf="@+id/donutSpinner">
 
     </NumberPicker>
 
     <Button
-        android:id="@+id/addButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
-        android:layout_marginLeft="56dp"
-        android:layout_marginTop="56dp"
-        android:onClick="addToList"
-        android:text="@string/add"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/quantityPicker" />
-
-    <Button
-        android:id="@+id/viewButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
-        android:onClick="showList"
-        android:text="@string/view"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.536"
-        app:layout_constraintStart_toEndOf="@+id/addButton"
-        app:layout_constraintTop_toBottomOf="@+id/quantityPicker" />
-
-    <Button
         android:id="@+id/orderButton"
         android:layout_width="137dp"
         android:layout_height="48dp"
-        android:onClick="showDialog"
+        android:onClick="addToList"
         android:text="@string/order"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -115,27 +91,27 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
         android:layout_marginLeft="36dp"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="232dp"
         android:text="@string/subtotal"
         android:textColor="#FFFFFF"
         android:textSize="@dimen/size_twenty"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addButton" />
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
     <EditText
         android:id="@+id/totalEditBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="76dp"
+        android:layout_marginTop="180dp"
         android:editable="false"
         android:ems="10"
         android:importantForAutofill="no"
         android:inputType="textPersonName"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.246"
+        app:layout_constraintHorizontal_bias="0.172"
         app:layout_constraintStart_toEndOf="@+id/textView9"
-        app:layout_constraintTop_toBottomOf="@+id/viewButton" />
+        app:layout_constraintTop_toBottomOf="@+id/quantityPicker" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

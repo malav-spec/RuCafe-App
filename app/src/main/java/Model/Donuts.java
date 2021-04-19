@@ -96,7 +96,7 @@ public class Donuts extends MenuItem implements Customizable{
 
         double price_type = 0;
 
-        if(this.type.equals("Chocolate Glazed") || this.type.equals("Strawberry Glazed")){
+        if(this.type.equals("Chocolate Glazed") || this.type.equals("ChocolateGlazed") ||  this.type.equals("Strawberry Glazed")){
             price_type = 1.39;
         }
         else if(this.type.equals("Cinammon") || this.type.equals("Regular Baked")){
