@@ -14,8 +14,6 @@
     android:gravity="center"
     >
 
-
-
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -25,7 +23,6 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#FFFFFF"
         android:textSize="24sp">
-
     </TextView>
 
     <TextView
@@ -37,7 +34,6 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#FFFFFF"
         android:textSize="24sp">
-
     </TextView>
 
     <EditText
@@ -45,7 +41,25 @@
         android:layout_width="98dp"
         android:layout_height="wrap_content"
         android:textColor="#FFFFFF">
+    </EditText>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/scarlet"
+        android:gravity="center_horizontal"
+        android:text="@string/tax"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp">
+
+    </TextView>
+
+    <EditText
+        android:id="@+id/taxAmount"
+        android:layout_width="98dp"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF">
 
     </EditText>
 
