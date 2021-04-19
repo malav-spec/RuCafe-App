@@ -27,8 +27,6 @@ public class CurrentOrderActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_current_order);
         list = findViewById(R.id.list);
-        System.out.println(currentOrder.getOrderNumber());
-        Toast.makeText(getApplicationContext(),""+currentOrder.getTotal(),Toast.LENGTH_SHORT).show();
         ArrayAdapter<String> List = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, currentOrder.makeAL());
         list.setAdapter(List);
         current_total = findViewById(R.id.current_total);
@@ -63,12 +61,13 @@ public class CurrentOrderActivity extends AppCompatActivity {
         for(int i=0;i<temp.size();i++){
             str=str+temp.get(i)+"\n";
         }
-        if(currentOrder.getTotal()==0.0)
-            return;
+        if(currentOrder.getTotal()==0.0){
+            finish();
+        }
         str=str+"Total Amount = $"+currentOrder.getTotalWithTax()+"\n";
         allOrder.add(str);
         currentOrder.clearAll();
-
+        finish();
     }
 
     private void updateTotal(String str){

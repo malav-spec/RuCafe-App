@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void toPrev(View view){
-        Intent intent = new Intent(this, All.class);
+        Intent intent = new Intent(this, AllOrders.class);
         startActivity(intent);
     }
 }
