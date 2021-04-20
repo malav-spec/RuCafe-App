@@ -49,6 +49,7 @@ public class Order implements Customizable {
         totalWithTax = Math.round(totalWithTax * 100.0) / 100.0;
         return totalWithTax;
     }
+    
 
     /**
      * Used to get total price without tax
@@ -99,10 +100,6 @@ public class Order implements Customizable {
         orderNumber--;
         itemsList.remove(Integer.parseInt(obj.toString()));
         return true;
-    }
-
-    public int getOrderNumber(){
-        return orderNumber;
     }
 
     /**

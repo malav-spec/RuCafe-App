@@ -21,10 +21,6 @@ public class Donuts extends MenuItem implements Customizable{
      */
     private ArrayList<Donuts> donutList = new ArrayList<>();
 
-//    private ArrayList<String> orders = new ArrayList<>();
-//
-//    private String[] donutOrder;
-
     /**
      *  Constructor for Donut class
      * @param price Price of donut
@@ -120,6 +116,10 @@ public class Donuts extends MenuItem implements Customizable{
         return type + ", "  + quantity  + ", " + itemPrice();
     }
 
+    /**
+     * Used to get all values in Donut Object
+     * @return
+     */
     public String getFullDonutOrder(){
         return type + ", Quant: " + quantity + ", Price: $" + itemPrice();
     }
