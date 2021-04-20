@@ -45,7 +45,7 @@ public class AllOrders extends AppCompatActivity {
      * @param pos Index number of which element we want to remove from the list view
      */
     private void remove(int pos){
-        allOrder.remove(""+pos);
+        allOrder.remove("" + pos);
         Intent intent = new Intent(this, AllOrders.class);
         startActivity(intent);
         finish();

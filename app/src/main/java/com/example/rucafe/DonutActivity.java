@@ -106,10 +106,9 @@ public class DonutActivity extends AppCompatActivity implements AdapterView.OnIt
     }
 
     public void populateArray(){
-        int i;
         //Log.d("Size of orderDetails", Integer.toString(orderDetails.size()));
         donutOrders = new String[orderDetails.size()];
-        for(i = 0; i < donutOrders.length; i++){
+        for(int i = 0; i < donutOrders.length; i++){
             donutOrders[i] = orderDetails.get(i);
         }
     }
@@ -146,10 +145,9 @@ public class DonutActivity extends AppCompatActivity implements AdapterView.OnIt
     }
 
     public String getSubTotal(){
-        int i;
         double sum = 0;
 
-        for(i = 0; i < orderPrices.size(); i++){
+        for(int i = 0; i < orderPrices.size(); i++){
             sum += orderPrices.get(i);
         }
 
