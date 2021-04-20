@@ -7,7 +7,10 @@ import android.view.View;
 import Model.Order;
 import Model.StoreOrder;
 
-
+/**
+ * Activity for Main view
+ * @author Malav Doshi and Herik Patel
+ */
 public class MainActivity extends AppCompatActivity {
 
        /**
@@ -19,6 +22,11 @@ public class MainActivity extends AppCompatActivity {
      */
     public static StoreOrder allOrder = new StoreOrder();
 
+    /**
+     * Used to create and display view when the activity is invoked
+     * @param savedInstanceState It is State of the instance of type Bundle
+     */
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,21 +35,37 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    /**
+     * Used to change the current activity to CoffeeActivity
+     * @param view Parameter of type View is passed
+     */
     public void toCoffee(View view){
         Intent intent = new Intent(this, CoffeeActivity.class);
         startActivity(intent);
     }
 
+    /**
+     * Used to change the current activity to DonutActivity
+     * @param view Parameter of type View is passed
+     */
     public void toDonut(View view){
         Intent intent = new Intent(this, DonutActivity.class);
         startActivity(intent);
     }
 
+    /**
+     * Used to change the current activity to CurrentOrderActivity
+     * @param view Parameter of type View is passed
+     */
     public void toCurrentOrder(View view){
         Intent intent = new Intent(this, CurrentOrderActivity.class);
         startActivity(intent);
     }
 
+    /**
+     * Used to change the current activity to AllOrders
+     * @param view Parameter of type View is passed
+     */
     public void toPrev(View view){
         Intent intent = new Intent(this, AllOrders.class);
         startActivity(intent);

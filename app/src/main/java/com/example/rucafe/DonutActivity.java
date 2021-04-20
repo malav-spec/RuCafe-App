@@ -15,9 +15,12 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
 import Model.Donuts;
-
 import static com.example.rucafe.MainActivity.currentOrder;
 
+/**
+ * Activity for Donut view
+ * @author Malav Doshi and Herik Patel
+ */
 public class DonutActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     private NumberPicker numberPicker;
@@ -78,7 +81,7 @@ public class DonutActivity extends AppCompatActivity implements AdapterView.OnIt
                     Donuts donut = getDonutOrder(st);
                     donut.itemPrice();
                     currentOrder.add(donut);
-                    Toast.makeText(getApplicationContext(),""+donut.getFullDonutOrder(),Toast.LENGTH_SHORT).show();
+                    //currentOrder.add(donutOrder);
                 }
                 String stringTotal = getSubTotal();
                 //currentOrder.setTotal(currentOrder.getTotal()+Double.parseDouble(stringTotal.substring(1)));
@@ -173,9 +176,7 @@ public class DonutActivity extends AppCompatActivity implements AdapterView.OnIt
         orders.add(donutOrder.getDetails());
         orderDetails.add(donutOrder.getFullDonutOrder());
         double db = donutOrder.itemPrice() + currentOrder.getTotal();
-        //Toast.makeText(getApplicationContext(),amount,Toast.LENGTH_SHORT).show();
         currentOrder.setTotal(db);
-        Toast.makeText(getApplicationContext(),"Donut added to list",Toast.LENGTH_SHORT).show();
         showDialog(view);
     }
 

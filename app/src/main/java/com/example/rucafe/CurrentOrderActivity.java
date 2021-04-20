@@ -9,18 +9,30 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
-
-import static android.provider.AlarmClock.EXTRA_MESSAGE;
 import static com.example.rucafe.MainActivity.currentOrder;
 import static com.example.rucafe.MainActivity.allOrder;
 
 
+/**
+ * Activity for current order view
+ * @author Malav Doshi and Herik Patel
+ */
+
 public class CurrentOrderActivity extends AppCompatActivity {
 
+    /**
+     * Used to represent Listview for the current order items
+     */
     private ListView list;
-    private EditText current_total;
-    private EditText current_total_tax;
-    private EditText taxAmount;
+    /**
+     * Used to represent edit text for different amount
+     */
+    private EditText current_total, current_total_tax, taxAmount;
+
+    /**
+     * Used to create and display view when the activity is invoked
+     * @param savedInstanceState It is State of the instance of type Bundle
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,14 +48,14 @@ public class CurrentOrderActivity extends AppCompatActivity {
         String total_with_tax = "" + currentOrder.getTotalWithTax();
         current_total.setText(total);
         current_total_tax.setText(total_with_tax);
-        int taxInt = (int)((100*currentOrder.getTotalWithTax())-(100*currentOrder.getTotal()));
+        int taxInt = (int)((100*currentOrder.getTotalWithTax()) - (100*currentOrder.getTotal()));
         double tax = (double) taxInt;
-        if(tax!=0.0) {
+        if(tax != 0.0) {
             tax = tax / 100;
             tax = roundOff(tax);
         }
 
-        taxAmount.setText(""+tax);
+        taxAmount.setText("" + tax);
 
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -55,21 +67,30 @@ public class CurrentOrderActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Used to remove an Item from order
+     * @param pos Position of item which we want to remove
+     */
     private void remove(int pos){
-        currentOrder.remove(""+pos);
+        currentOrder.remove("" + pos);
         Intent intent = new Intent(this, CurrentOrderActivity.class);
         startActivity(intent);
         finish();
     }
 
+    /**
+     * Used to add to store order when order is placed
+     * @param view Parameter of type View is passed
+     */
     public void addToAllOrders(View view){
         ArrayList<String> temp = currentOrder.makeAL();
         String str = "";
-        for(int i=0;i<temp.size();i++){
-            str = str + temp.get(i) +"\n";
+        for(int i = 0; i < temp.size(); i++){
+            str = str + temp.get(i) + "\n";
         }
-        if(currentOrder.getTotal()==0.0){
+        if(currentOrder.getTotal() == 0.0){
             finish();
+            return;
         }
         str = str + "Total Amount = $" + currentOrder.getTotalWithTax() + "\n";
         allOrder.add(str);
@@ -77,15 +98,26 @@ public class CurrentOrderActivity extends AppCompatActivity {
         finish();
     }
 
+    /**
+     * Used to update total when an item is removed from the list
+     * @param str String of the order
+     */
     private void updateTotal(String str){
         StringTokenizer st = new StringTokenizer(str, ",");
-        String amountInString="";
+        String amountInString = "";
         while(st.hasMoreTokens()){
             amountInString = st.nextToken();
         }
         Double amount = Double.parseDouble(amountInString);
         currentOrder.setTotal(currentOrder.getTotal() - amount);
     }
+
+    /**
+     * Used to round off a Double value to two decimal places
+     * @param number The value which we want to round off
+     * @return A double value round off to two decimal places
+     */
+
     private double roundOff(double number){ //rounds off a number to two decimal places
         return Math.round(number * 100.0) / 100.0;
     }

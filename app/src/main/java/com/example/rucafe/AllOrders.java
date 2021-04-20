@@ -4,22 +4,25 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.EditText;
-import android.widget.Toast;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ListView;
-import java.util.ArrayList;
-import java.util.StringTokenizer;
-
-import android.os.Bundle;
-
 import static com.example.rucafe.MainActivity.allOrder;
-import static com.example.rucafe.MainActivity.currentOrder;
 
+/**
+ * Activity for All orders view
+ * @author Malav Doshi and Herik Patel
+ */
 public class AllOrders extends AppCompatActivity {
+    /**
+     * Used to represent Listview for the All orders
+     */
     private ListView list;
+
+    /**
+     * Used to create and display view when the activity is invoked
+     * @param savedInstanceState It is State of the instance of type Bundle
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,22 +33,22 @@ public class AllOrders extends AppCompatActivity {
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String selectedItem = (String) parent.getItemAtPosition(position);
+                //String selectedItem = (String) parent.getItemAtPosition(position);
                 remove(position);
             }
         });
     }
 
+
+    /**
+     * Used to remove elements from listview
+     * @param pos Index number of which element we want to remove from the list view
+     */
     private void remove(int pos){
         allOrder.remove(""+pos);
         Intent intent = new Intent(this, AllOrders.class);
         startActivity(intent);
         finish();
-    }
-
-    public void mainMenu(View view){
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
     }
 
 }
