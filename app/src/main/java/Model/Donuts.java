@@ -9,7 +9,7 @@ public class Donuts extends MenuItem implements Customizable{
     /**
      * Used to represent type of donut
      */
-    private String type= "";
+    private String type = "";
     /**
      * Used to quantity of donut
      */
@@ -92,10 +92,10 @@ public class Donuts extends MenuItem implements Customizable{
 
         double price_type = 0;
 
-        if(this.type.equals("Chocolate Glazed") || this.type.equals("ChocolateGlazed") ||  this.type.equals("Strawberry Glazed")||this.type.equals("StrawberryGlazed")){
+        if(this.type.equals("Chocolate Glazed") || this.type.equals("ChocolateGlazed") || this.type.equals("Strawberry Glazed") || this.type.equals("StrawberryGlazed")){
             price_type = 1.39;
         }
-        else if(this.type.equals("Cinammon") || this.type.equals("Regular Baked")||this.type.equals("RegularBaked")){
+        else if(this.type.equals("Cinammon") || this.type.equals("Regular Baked") || this.type.equals("RegularBaked")){
             price_type = 1.59;
         }
         else if(this.type.equals("Jelly Filled") || this.type.equals("JellyFilled") || this.type.equals("Boston Kreme") || this.type.equals("BostonKreme")){

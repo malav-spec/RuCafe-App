@@ -64,7 +64,7 @@ public class Order implements Customizable {
      * @param total New total which we want to update
      */
     public void setTotal(double total){
-        this.total=total;
+        this.total = total;
     }
 
     /**
@@ -94,7 +94,7 @@ public class Order implements Customizable {
      */
     @Override
     public boolean remove(Object obj) {
-        if(orderNumber<0) {
+        if(orderNumber < 0) {
             return false;
         }
         orderNumber--;
@@ -108,7 +108,7 @@ public class Order implements Customizable {
      */
     public ArrayList<String> makeAL() {
         ArrayList<String> orders = new ArrayList();
-        for(int i=0;i<itemsList.size();i++)
+        for(int i = 0; i < itemsList.size() ; i++)
         {
             orders.add(toString(itemsList.get(i)));
         }
@@ -120,6 +120,6 @@ public class Order implements Customizable {
      */
     public void clearAll(){
         itemsList.clear();
-        this.total=0.0;
+        this.total = 0.0;
     }
 }

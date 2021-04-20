@@ -107,7 +107,7 @@ public class Coffee extends MenuItem implements Customizable{
             size_price = 3.49;
         }
 
-        double add_in_cost = (0.2)*(num_add_in);
+        double add_in_cost = (0.2) * (num_add_in);
         super.setPrice(roundOff(size_price + add_in_cost));
         return size_price + add_in_cost;
     }
@@ -118,7 +118,7 @@ public class Coffee extends MenuItem implements Customizable{
      */
     @Override
     public String toString(){
-        return "$"+roundOff(itemPrice());
+        return "$" + roundOff(itemPrice());
     }
 
     /**
@@ -128,7 +128,6 @@ public class Coffee extends MenuItem implements Customizable{
      */
     @Override
     public boolean add(Object obj) {
-
         return false;
     }
 
@@ -138,11 +137,11 @@ public class Coffee extends MenuItem implements Customizable{
      */
     @Override
     public String getDetails(){
-        String tostr= size + ", ";
-        for(int i=0;i<num_add_in;i++){
-            tostr=tostr+addIn[i]+", ";
+        String tostr = size + ", ";
+        for(int i = 0; i < num_add_in ; i++){
+            tostr = tostr+addIn[i] + ", ";
         }
-        tostr=tostr+roundOff(itemPrice());
+        tostr = tostr + roundOff(itemPrice());
         return tostr;
 
     }
