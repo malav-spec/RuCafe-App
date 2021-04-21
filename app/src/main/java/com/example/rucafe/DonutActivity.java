@@ -23,16 +23,54 @@ import static com.example.rucafe.MainActivity.currentOrder;
  */
 public class DonutActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
+    /**
+     * Number Picker for selecting quantity
+     */
     private NumberPicker numberPicker;
+
+    /**
+     * String array to store
+     */
     private String[] pickerVals;
+
+    /**
+     * Spinner to select Donut flavors
+     */
     private Spinner donutSpinner;
+
+    /**
+     * EditText for setting the subtotal
+     */
     private EditText total;
+
+    /**
+     * ArrayList to store the donut order as String
+     */
     private ArrayList<String> orders = new ArrayList();
+
+    /**
+     * ArrayList to store the details of donut order
+     */
     private ArrayList<String> orderDetails = new ArrayList();
+
+    /**
+     * Array List to store the price of order
+     */
     private ArrayList<Double> orderPrices = new ArrayList<>();
+
+    /**
+     * String Array to store the donut order in a formatted string
+     */
     private String[] donutOrders;
-    private double price;
+
+    /**
+     * AlertDialog for order confirmation
+     */
     private AlertDialog alertDialog;
+
+    /**
+     * Used to take the donut order
+     */
     Donuts donutOrder = new Donuts();
 
     @Override
@@ -53,7 +91,7 @@ public class DonutActivity extends AppCompatActivity implements AdapterView.OnIt
 
         total = findViewById(R.id.totalEditBox);
         donutSpinner.setOnItemSelectedListener(this);
-
+        setTitle("Donuts");
         numberPicker.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
             @Override
             public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
@@ -65,6 +103,7 @@ public class DonutActivity extends AppCompatActivity implements AdapterView.OnIt
 
         builder.setMessage(R.string.dialogMesgDonut)
                 .setTitle(R.string.dialogTitle);
+
 
         builder.setPositiveButton(R.string.positive, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
@@ -87,7 +126,6 @@ public class DonutActivity extends AppCompatActivity implements AdapterView.OnIt
                 //currentOrder.setTotal(currentOrder.getTotal()+Double.parseDouble(stringTotal.substring(1)));
                 Toast.makeText(getApplicationContext(),"Order added",Toast.LENGTH_SHORT).show();
                 openNewActivity();
-                finish();
             }
         });
         builder.setNeutralButton(R.string.negative, new DialogInterface.OnClickListener() {
@@ -105,6 +143,9 @@ public class DonutActivity extends AppCompatActivity implements AdapterView.OnIt
 
     }
 
+    /**
+     * Used to initialize donutOrders array
+     */
     public void populateArray(){
         //Log.d("Size of orderDetails", Integer.toString(orderDetails.size()));
         donutOrders = new String[orderDetails.size()];
@@ -113,6 +154,10 @@ public class DonutActivity extends AppCompatActivity implements AdapterView.OnIt
         }
     }
 
+    /**
+     * Used to show the Donut list
+     * @param view Parameter type of view is passed
+     */
     public void showList(View view){
         Log.d("Size", Integer.toString(orderDetails.size()));
         populateArray();
@@ -124,10 +169,19 @@ public class DonutActivity extends AppCompatActivity implements AdapterView.OnIt
         startActivity(intent);
     }
 
+    /**
+     *
+     * @return
+     */
     public ArrayList<String> getOrders(){
         return orders;
     }
 
+    /**
+     * Used to get the donut order details like price, quantity and flavor
+     * @param st String Tokenizer object
+     * @return Donut object
+     */
     public Donuts getDonutOrder(StringTokenizer st){
         Donuts donut;
         String dType = "";
@@ -144,6 +198,10 @@ public class DonutActivity extends AppCompatActivity implements AdapterView.OnIt
         return donut;
     }
 
+    /**
+     * Helper method to calculate and display the subtotal
+     * @return String with the subtotal
+     */
     public String getSubTotal(){
         double sum = 0;
 
@@ -154,11 +212,19 @@ public class DonutActivity extends AppCompatActivity implements AdapterView.OnIt
         return "$ " + sum;
     }
 
+    /**
+     * Used to open new activity
+     */
     public void openNewActivity(){
         Intent intent = new Intent(this, MainActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }
 
+    /**
+     * Used to set the subtotal
+     * @param view Parameter of type View is passed
+     */
     public void getTotal(View view){
         total.setText("");
         donutOrder.setType(donutSpinner.getSelectedItem().toString());
@@ -166,10 +232,18 @@ public class DonutActivity extends AppCompatActivity implements AdapterView.OnIt
         total.setText(donutOrder.toString());
     }
 
+    /**
+     * Used to pop up the Alert Dialog for confirming order
+     * @param view Parameter type of View is Passed
+     */
     public void showDialog(View view){
         alertDialog.show();
     }
 
+    /**
+     * Used to add the Donut order to the current order
+     * @param view Parameter of type View is passed
+     */
     public void addToList(View view){
         orders.add(donutOrder.getDetails());
         orderDetails.add(donutOrder.getFullDonutOrder());
@@ -178,59 +252,32 @@ public class DonutActivity extends AppCompatActivity implements AdapterView.OnIt
         showDialog(view);
     }
 
+    /**
+     * Remove donut order form the list
+     */
     public void removeFromList(){
         orders.remove(donutOrder.getDetails());
     }
 
+    /**
+     * Listener for item selection for Spinner
+     * @param parent Parameter of type AdapterView
+     * @param view Parameter of type View
+     * @param position Parameter of type int
+     * @param id Parameter of type long
+     */
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         getTotal(null);
     }
 
+    /**
+     * Not used
+     * @param parent Parameter of type AdapterView
+     */
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
 
     }
-/*
-    @Override
-    public void onSaveInstanceState(Bundle savedInstanceState) {
-        super.onSaveInstanceState(savedInstanceState);
-        // Save UI state changes to the savedInstanceState.
-        // This bundle will be passed to onCreate if the process is
-        // killed and restarted.
-        savedInstanceState.putBoolean("MyBoolean", true);
-        savedInstanceState.putDouble("myDouble", 1.9);
-        savedInstanceState.putInt("MyInt", 1);
-        savedInstanceState.putString("MyString", "Welcome back to Android");
-        savedInstanceState.putStringArray("DONUT_ORDERS", donutOrders);
-        savedInstanceState.putStringArrayList("ORDER_DETAILS", orderDetails);
-        // etc.
-    }
 
-    @Override
-    public void onRestoreInstanceState(Bundle savedInstanceState) {
-        super.onRestoreInstanceState(savedInstanceState);
-        // Restore UI state from the savedInstanceState.
-        // This bundle has also been passed to onCreate.
-        boolean myBoolean = savedInstanceState.getBoolean("MyBoolean");
-        double myDouble = savedInstanceState.getDouble("myDouble");
-        int myInt = savedInstanceState.getInt("MyInt");
-        String myString = savedInstanceState.getString("MyString");
-        donutOrders = savedInstanceState.getStringArray("DONUT_ORDERS");
-        orderDetails = savedInstanceState.getStringArrayList("ORDER_DETAILS");
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        Log.d("PAUSE", "pause actvity");
-
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        Log.d("RESUME", "resume activity");
-    }
-*/
 }

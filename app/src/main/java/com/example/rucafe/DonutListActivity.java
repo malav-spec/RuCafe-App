@@ -10,7 +10,14 @@ import android.widget.TextView;
 
 public class DonutListActivity extends AppCompatActivity {
 
+    /**
+     * ListView to display the donut list
+     */
     private ListView donutList;
+
+    /**
+     * Array for storing donut orders
+     */
     private String[] donutOrders;
 
     @Override

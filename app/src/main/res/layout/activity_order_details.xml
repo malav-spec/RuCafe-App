@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:noHistory="true"
+    tools:context=".OrderDetails"
+    android:orientation="vertical"
+    android:background="@color/scarlet"
+    android:layout_centerInParent="true"
+    android:gravity="center"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/scarlet"
+        android:gravity="center_horizontal"
+        android:text="@string/tap_on_the_order_to_cancel"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp">
+    </TextView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/scarlet"
+        android:gravity="center_horizontal"
+        android:text="@string/total"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp">
+    </TextView>
+
+    <EditText
+        android:id="@+id/current_total"
+        android:layout_width="98dp"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF">
+    </EditText>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/scarlet"
+        android:gravity="center_horizontal"
+        android:text="@string/tax"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp">
+
+    </TextView>
+
+    <EditText
+        android:id="@+id/taxAmount"
+        android:layout_width="98dp"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF">
+
+    </EditText>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/scarlet"
+        android:gravity="center_horizontal"
+        android:text="@string/final_amount"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp">
+
+    </TextView>
+
+    <EditText
+        android:id="@+id/current_total_tax"
+        android:layout_width="98dp"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF">
+
+    </EditText>
+
+    <Button
+        android:id="@+id/butt"
+        android:layout_width="wrap_content"
+        android:layout_height="43dp"
+        android:text="@string/order"
+        android:onClick="addToAllOrders"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.535"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/wcCheckBox"
+        app:layout_constraintVertical_bias="0.745" />
+
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/scarlet"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+</LinearLayout>

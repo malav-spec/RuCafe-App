@@ -55,7 +55,7 @@ public class CoffeeActivity extends AppCompatActivity implements AdapterView.OnI
                 R.array.size_array, R.layout.spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         sizeSpinner.setAdapter(adapter);
-
+        setTitle("Coffee");
         milk = findViewById(R.id.milkCheckBox);
         syrup = findViewById(R.id.syrupCheckBox);
         cream = findViewById(R.id.creamCheckBox);
@@ -100,6 +100,7 @@ public class CoffeeActivity extends AppCompatActivity implements AdapterView.OnI
      */
     public void openNewActivity(){
         Intent intent = new Intent(this, MainActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }
 

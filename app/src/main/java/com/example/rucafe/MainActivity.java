@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
      * @param view Parameter of type View is passed
      */
     public void toCurrentOrder(View view){
-        Intent intent = new Intent(this, CurrentOrderActivity.class);
+        Intent intent = new Intent(this, OrderDetails.class);
         startActivity(intent);
     }
 
@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
      * @param view Parameter of type View is passed
      */
     public void toPrev(View view){
-        Intent intent = new Intent(this, AllOrders.class);
+        Intent intent = new Intent(this, StoreOrders.class);
         startActivity(intent);
     }
 }

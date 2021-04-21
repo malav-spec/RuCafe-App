@@ -96,10 +96,10 @@ public class Donuts extends MenuItem implements Customizable{
             price_type = 1.39;
         }
         else if(this.type.equals("Cinammon") || this.type.equals("Regular Baked") || this.type.equals("RegularBaked")){
-            price_type = 1.59;
+            price_type = 1.39;
         }
         else if(this.type.equals("Jelly Filled") || this.type.equals("JellyFilled") || this.type.equals("Boston Kreme") || this.type.equals("BostonKreme")){
-            price_type = 2.00;
+            price_type = 1.39;
         }
 
         super.setPrice(roundOff(price_type * this.quantity));
