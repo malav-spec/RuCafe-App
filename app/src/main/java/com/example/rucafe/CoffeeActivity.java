@@ -71,6 +71,11 @@ public class CoffeeActivity extends AppCompatActivity implements AdapterView.OnI
                 .setTitle(R.string.dialogTitle);
 
         builder.setPositiveButton(R.string.positive, new DialogInterface.OnClickListener() {
+            /**
+             * Method invokes when order is pressed in gui
+             * @param dialog Type of DialogInterface
+             * @param id Id for the button
+             */
             public void onClick(DialogInterface dialog, int id) {
                 currentOrder.add(coffeeOrder);
                 currentOrder.setTotal(Double.parseDouble(coffeeOrder.toString().substring(1))+ currentOrder.getTotal());
@@ -80,6 +85,11 @@ public class CoffeeActivity extends AppCompatActivity implements AdapterView.OnI
             }
         });
         builder.setNeutralButton(R.string.negative, new DialogInterface.OnClickListener() {
+            /**
+             * Method invokes when order is pressed in gui
+             * @param dialog Type of DialogInterface
+             * @param id Id for the button
+             */
             public void onClick(DialogInterface dialog, int id) {
             }
         });
@@ -153,7 +163,10 @@ public class CoffeeActivity extends AppCompatActivity implements AdapterView.OnI
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         getTotal(null);
     }
-
+    /**
+     * Not used
+     * @param parent Parameter of type AdapterView
+     */
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
 

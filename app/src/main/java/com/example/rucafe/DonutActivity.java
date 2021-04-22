@@ -93,6 +93,12 @@ public class DonutActivity extends AppCompatActivity implements AdapterView.OnIt
         donutSpinner.setOnItemSelectedListener(this);
         setTitle("Donuts");
         numberPicker.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
+            /**
+             * Method invokes when values is changed in gui
+             * @param dialog Type of DialogInterface
+             * @param oldVal Previous value for the object
+             * @param newVal New value for the object
+             */
             @Override
             public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
                 getTotal(null);
@@ -106,6 +112,11 @@ public class DonutActivity extends AppCompatActivity implements AdapterView.OnIt
 
 
         builder.setPositiveButton(R.string.positive, new DialogInterface.OnClickListener() {
+            /**
+             * Method invokes when order is pressed in gui
+             * @param dialog Type of DialogInterface
+             * @param id Id for the button
+             */
             public void onClick(DialogInterface dialog, int id) {
                 if(orders.size() == -1){
                     Toast.makeText(getApplicationContext(),"No donuts to order",Toast.LENGTH_SHORT).show();
@@ -129,6 +140,11 @@ public class DonutActivity extends AppCompatActivity implements AdapterView.OnIt
             }
         });
         builder.setNeutralButton(R.string.negative, new DialogInterface.OnClickListener() {
+            /**
+             * Method invokes when button is pressed in gui
+             * @param dialog Type of DialogInterface
+             * @param id Id for the button
+             */
             public void onClick(DialogInterface dialog, int id) {
                 removeFromList();
             }

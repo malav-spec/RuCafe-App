@@ -32,6 +32,13 @@ public class StoreOrders extends AppCompatActivity {
         ArrayAdapter<String> List = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, allOrder.makeAL());
         list.setAdapter(List);
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            /**
+             * Method invokes when item is pressed in list view
+             * @param parent Type of adapter view
+             * @param view Parameter of type View is passed
+             * @param position Position of item in the list
+             * @param id id of the item selected
+             */
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 remove(position);

@@ -59,6 +59,13 @@ public class OrderDetails extends AppCompatActivity {
         taxAmount.setText("" + tax);
 
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            /**
+             * Method invokes when item is pressed in list view
+             * @param parent Type of adapter view
+             * @param view Parameter of type View is passed
+             * @param position Position of item in the list
+             * @param id id of the item selected
+             */
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String selectedItem = (String) parent.getItemAtPosition(position);
