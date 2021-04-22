@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:noHistory="true"
-    tools:context=".OrderDetails"
+    tools:context=".OrderDetailsActivity"
     android:orientation="vertical"
     android:background="@color/scarlet"
     android:layout_centerInParent="true"

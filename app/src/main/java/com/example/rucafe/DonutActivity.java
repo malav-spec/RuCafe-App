@@ -95,7 +95,7 @@ public class DonutActivity extends AppCompatActivity implements AdapterView.OnIt
         numberPicker.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
             /**
              * Method invokes when values is changed in gui
-             * @param dialog Type of DialogInterface
+             * @param picker Type of DialogInterface
              * @param oldVal Previous value for the object
              * @param newVal New value for the object
              */
@@ -131,10 +131,8 @@ public class DonutActivity extends AppCompatActivity implements AdapterView.OnIt
                     Donuts donut = getDonutOrder(st);
                     donut.itemPrice();
                     currentOrder.add(donut);
-                    //currentOrder.add(donutOrder);
                 }
                 String stringTotal = getSubTotal();
-                //currentOrder.setTotal(currentOrder.getTotal()+Double.parseDouble(stringTotal.substring(1)));
                 Toast.makeText(getApplicationContext(),"Order added",Toast.LENGTH_SHORT).show();
                 openNewActivity();
             }
@@ -157,40 +155,6 @@ public class DonutActivity extends AppCompatActivity implements AdapterView.OnIt
             orderDetails = savedInstanceState.getStringArrayList("ORDER_DETAILS");
         }
 
-    }
-
-    /**
-     * Used to initialize donutOrders array
-     */
-    public void populateArray(){
-        //Log.d("Size of orderDetails", Integer.toString(orderDetails.size()));
-        donutOrders = new String[orderDetails.size()];
-        for(int i = 0; i < donutOrders.length; i++){
-            donutOrders[i] = orderDetails.get(i);
-        }
-    }
-
-    /**
-     * Used to show the Donut list
-     * @param view Parameter type of view is passed
-     */
-    public void showList(View view){
-        Log.d("Size", Integer.toString(orderDetails.size()));
-        populateArray();
-        Bundle b = new Bundle();
-        b.putStringArray("ORDERS_LIST", donutOrders);
-
-        Intent intent = new Intent(this, DonutListActivity.class);
-        intent.putExtras(b);
-        startActivity(intent);
-    }
-
-    /**
-     *
-     * @return
-     */
-    public ArrayList<String> getOrders(){
-        return orders;
     }
 
     /**
